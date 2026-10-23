@@ -1,22 +1,26 @@
 # Barbora Maňáková – osobní web
 
-Statický web (HTML + CSS + JS, bez buildu) pro Barboru Maňákovou – online marketing, sociální sítě a design.
-Rozvržení je inspirované šablonou [Plumfix](https://plumfix.framer.website/), barvy vychází z jejího LinkedIn banneru.
+Web pro Barboru Maňákovou (online marketing, sociální sítě, design). Postavený na Next.js boilerplatu
+(shadcn/ui + Framer Motion) s barvami jejího brandu – krémová, tmavě zelená, pudrově růžová a šalvějová.
+Obsahuje světlý i tmavý režim (přepínač v hlavičce).
 
-## Struktura
+## Úpravy obsahu
 
-- `index.html` – veškerý obsah stránky (texty, sekce)
-- `css/style.css` – vzhled; barvy a písma jsou v proměnných na začátku souboru (`:root`)
-- `js/main.js` – mobilní menu, animace při scrollu, počítadla
-- `assets/` – fotka a favicon
+Všechny texty jsou v **`lib/content.ts`** – služby, zkušenosti, certifikáty, FAQ, kontakty.
+Fotka je v `public/barbora.jpg`. Barvy jsou v `app/globals.css` (proměnné na začátku souboru).
 
-## Spuštění
+Ještě doplnit: e-mail a telefon (`site.email`, `site.phone` v `lib/content.ts`) a fotku ve vyšším rozlišení.
 
-Stačí otevřít `index.html` v prohlížeči. Pro zveřejnění lze použít např. GitHub Pages
-(Settings → Pages → Deploy from branch), Netlify nebo Vercel.
+## Vývoj
 
-## K doplnění
+```bash
+pnpm install
+pnpm dev      # http://localhost:3000
+pnpm build    # statický export do složky out/
+pnpm start    # lokální náhled složky out/
+```
 
-- E-mail a telefon (v `index.html` označeno `TODO`)
-- Fotka ve vyšším rozlišení (`assets/barbora.jpg`, ideálně alespoň 900 px na šířku)
-- Případně reference klientů a ukázky práce
+## Nasazení
+
+Web se exportuje jako statické soubory (`out/`), takže jde nahrát kamkoli –
+Vercel, Netlify, GitHub Pages nebo běžný webhosting.
