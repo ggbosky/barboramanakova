@@ -31,25 +31,17 @@ const itemVariants: Variants = {
 
 export function HeroSection() {
   return (
-    <section id="uvod" className="relative w-full overflow-hidden pt-28 md:pt-32 lg:pt-28">
+    <section id="uvod" className="relative w-full pt-28 pb-16 md:pt-36 md:pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
       <AnimatedBackground
         variant="gradient"
         color="rgba(232, 164, 151, 0.12)"
         secondaryColor="rgba(153, 175, 172, 0.12)"
       />
 
-      {/* Velké jméno v pozadí */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-24 select-none text-center font-heading font-bold uppercase leading-none tracking-tighter text-foreground/[0.04] text-[18vw] lg:top-20"
-      >
-        Maňáková
-      </div>
-
-      <div className="container relative px-6 md:px-8">
-        <div className="grid items-end gap-6 lg:min-h-[640px] lg:grid-cols-[1fr_460px] xl:grid-cols-[1fr_520px]">
+      <div className="container px-6 md:px-8">
+        <div className="grid items-center gap-12 lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_460px]">
           <motion.div
-            className="flex flex-col justify-center space-y-6 pb-4 lg:self-center lg:pb-24"
+            className="flex flex-col justify-center space-y-6"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -92,44 +84,32 @@ export function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Barbora stojí přímo na stránce – výřez bez pozadí, ukotvený ke spodní hraně sekce */}
-          <div className="relative mx-auto flex w-full max-w-[420px] items-end justify-center self-end lg:max-w-none">
+          {/* Kulatý portrét s přechodovým rámem – podobně jako logo z jejího LinkedIn banneru */}
+          <motion.div
+            className="relative mx-auto w-full max-w-[300px] sm:max-w-[360px] lg:max-w-none"
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          >
             <div
               aria-hidden="true"
-              className="absolute bottom-0 left-1/2 aspect-square w-[95%] -translate-x-1/2 translate-y-[12%] rounded-full bg-[radial-gradient(circle_at_50%_45%,hsl(var(--rose)/0.45),hsl(var(--sage)/0.18)_55%,transparent_72%)] blur-2xl"
+              className="absolute -inset-10 rounded-full bg-[radial-gradient(circle,hsl(var(--rose)/0.28),hsl(var(--sage)/0.12)_50%,transparent_70%)] blur-2xl"
             />
-            <div
-              aria-hidden="true"
-              className="absolute bottom-0 left-1/2 aspect-square w-[78%] -translate-x-1/2 translate-y-[18%] rounded-full border border-rose/25"
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <motion.img
-              src={site.cutout}
-              alt={site.name}
-              width={280}
-              height={360}
-              className="relative z-10 w-[86%] max-w-[440px] select-none drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)]"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            />
-
-            <motion.div
-              className="glassmorphic-card absolute bottom-4 left-0 z-20 w-36 border-glow-rose p-3 sm:bottom-14 sm:w-52 sm:p-4 lg:-left-6"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.9 }}
-            >
-              <p className="font-heading text-2xl font-bold text-primary sm:text-3xl">{hero.card.value}</p>
-              <p className="text-xs font-medium text-foreground sm:text-sm">{hero.card.label}</p>
-              <p className="mt-1 hidden text-xs text-muted-foreground sm:block">{hero.card.sub}</p>
-            </motion.div>
-          </div>
+            <div className="relative aspect-square rounded-full bg-gradient-to-br from-rose via-blush/70 to-sage p-[6px] shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+              <div className="h-full w-full overflow-hidden rounded-full border-4 border-background">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={site.photo}
+                  alt={site.name}
+                  width={400}
+                  height={400}
+                  className="h-full w-full object-cover object-[50%_30%]"
+                />
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
-
-      {/* Plynulý přechod do další sekce */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[15] h-16 bg-gradient-to-b from-transparent to-background/60" />
     </section>
   )
 }

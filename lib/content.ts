@@ -9,7 +9,6 @@ export const site = {
   email: "",
   phone: "",
   photo: "/barbora.jpg",
-  cutout: "/barbora-cutout.png",
 }
 
 export const navItems = [
@@ -26,7 +25,6 @@ export const hero = {
   title: "který prodává",
   lead: "Pomáhám firmám a podnikatelům růst na sociálních sítích – od strategie přes grafiku a texty až po reklamy, které dávají smysl.",
   note: "Praha · práce na dálku pro celou ČR",
-  card: { value: "6+", label: "let v obchodě a marketingu", sub: "Social media · Design · PPC" },
 }
 
 export const services = [
