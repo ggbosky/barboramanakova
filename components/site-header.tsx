@@ -7,7 +7,6 @@ import { List, X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { ModeToggle } from "@/components/mode-toggle"
 import { Icons } from "@/components/icons"
 import { useScrollPosition } from "@/hooks/use-scroll-position"
 import { navItems, site } from "@/lib/content"
@@ -60,8 +59,6 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <ModeToggle />
-
           <div className="hidden lg:flex items-center">
             <Button size="sm" className="neumorphic-button-primary" asChild>
               <Link

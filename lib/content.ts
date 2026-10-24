@@ -9,6 +9,7 @@ export const site = {
   email: "",
   phone: "",
   photo: "/barbora.jpg",
+  cutout: "/barbora-cutout.png",
 }
 
 export const navItems = [
@@ -21,12 +22,11 @@ export const navItems = [
 ]
 
 export const hero = {
-  badge: "Online marketing · Social media · Design",
   titleGradient: "Online marketing,",
   title: "který prodává",
   lead: "Pomáhám firmám a podnikatelům růst na sociálních sítích – od strategie přes grafiku a texty až po reklamy, které dávají smysl.",
   note: "Praha · práce na dálku pro celou ČR",
-  photoChips: ["Social media", "Design", "PPC"],
+  card: { value: "6+", label: "let v obchodě a marketingu", sub: "Social media · Design · PPC" },
 }
 
 export const services = [

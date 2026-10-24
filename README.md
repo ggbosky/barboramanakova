@@ -2,7 +2,7 @@
 
 Web pro Barboru Maňákovou (online marketing, sociální sítě, design). Postavený na Next.js boilerplatu
 (shadcn/ui + Framer Motion) s barvami jejího brandu – krémová, tmavě zelená, pudrově růžová a šalvějová.
-Obsahuje světlý i tmavý režim (přepínač v hlavičce).
+Web má jen tmavý vzhled.
 
 ## Úpravy obsahu
 

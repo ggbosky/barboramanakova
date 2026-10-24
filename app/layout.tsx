@@ -3,7 +3,6 @@ import type { Metadata } from "next"
 import { Inter, Montserrat } from "next/font/google"
 
 import { cn } from "@/lib/utils"
-import { ThemeProvider } from "@/components/theme-provider"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 
@@ -43,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="cs" suppressHydrationWarning>
+    <html lang="cs" className="dark" style={{ colorScheme: "dark" }}>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased font-light",
@@ -51,13 +50,11 @@ export default function RootLayout({
           fontHeading.variable,
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <div className="relative flex min-h-screen flex-col">
-            <SiteHeader />
-            <div className="flex-1">{children}</div>
-            <SiteFooter />
-          </div>
-        </ThemeProvider>
+        <div className="relative flex min-h-screen flex-col">
+          <SiteHeader />
+          <div className="flex-1">{children}</div>
+          <SiteFooter />
+        </div>
       </body>
     </html>
   )
